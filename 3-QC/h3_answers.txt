@@ -1,0 +1,40 @@
+Q1: 
+The header of the first read in R1 is:
+@SRR1569760.2151832 D4LHBFN1:249:D292YACXX:8:1207:15788:92582/1
+The header of the first read in R2 is:
+@SRR1569760.2151832 D4LHBFN1:249:D292YACXX:8:1207:15788:92582/2
+
+As we can see, the headers are the same except for the last character which indicates if
+it belongs to R1 or R2.
+
+Q2:
+I used "zcat data/SRR1569760_sub_1.fastq.gz | head -n 4" to view the first read in R1,
+and then copied the sequence and ran "echo -n <sequence> | wc -c" to get its length.
+The read length is 101.
+To find the number of reads, I used: "zcat data/SRR1569760_sub_1.fastq.gz | grep @SRR1569760 | wc",
+and found that both R1 adn R2 contain 1782180 reads.
+Overall we have 1782180*2 reads of length 101, so according to D=(L*N)/G, and assuming G=12Mb,
+we get that D (sequencing depth) = 30
+
+Q3:
+The plot "Per base sequence content" is suspicious - we see that the content of the 
+start of the reads isn't distibuted according to the expected constant distribution across the genome.
+There are no significant differences between R1 and R2.
+
+Q4:
+The command I ran is:
+trimmomatic PE data/SRR1569760_sub_1.fastq.gz data/SRR1569760_sub_2.fastq.gz -baseout trimmomatic_results/output ILLUMINACLIP:data/NexteraPE-PE.fa:2:30:10 HEADCROP:20 MINLEN:70
+
+First, I used ILLUMINACLIP to trim adapter sequences since the fastqc report showed they exist.
+Then, this operation resulted in having some reads which are very short, so I removed them with MINLEN (applied last according to the guidelines given in the lecture).
+Also, I decided to cut the first 20 bp of all reads because of the plot "Per base sequence content", and I used the module HEADCROP for that.
+I didn't apply any module to trim low-quality bases since the fastqc report showed that there aren't such bases.
+
+Q5:
+After cleanup, I was left with 1642999*2 reads of length 81, so the sequencing depth is:
+(L*N)/G = 81*1642999*2/12M = 22.2
+
+Bonus section:
+I ran fastuniq to remove duplicated from the clean paired reads, and ran fastqc again on the results,
+and indeed saw that the plots "Sequence Duplication Levels" are a bit better 
+(the distribution is more skwed to small duplication level)

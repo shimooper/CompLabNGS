@@ -1,0 +1,21 @@
+Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for this output (/usr/share/lmod/lmod/init/bash)
+compute-0-236.power
+7621490.power9.tau.ac.il
+#transcripts before filtering: 6697, #transcripts after filtering: 2765
+Log2 fold change & Wald test p-value: strain S288C vs RM11
+                  baseMean  log2FoldChange  ...        pvalue          padj
+Geneid                                      ...                            
+YAL064C-A_mRNA    4.741918        5.685755  ...  4.628997e-03  3.411913e-02
+YAL063C_mRNA     36.288198        4.383126  ...  2.294693e-12  3.524904e-10
+YAL062W_mRNA     61.159845        0.882172  ...  1.100199e-02  6.671163e-02
+YAL061W_mRNA     46.857340        0.907998  ...  1.542872e-02  8.724009e-02
+YAL060W_mRNA     11.694449       -0.477970  ...  3.403227e-01  6.047508e-01
+...                    ...             ...  ...           ...           ...
+YPR197C_mRNA    198.441045       -0.980893  ...  1.153422e-03  1.163945e-02
+YPR199C_mRNA      4.168615        0.176340  ...  8.271718e-01  9.280381e-01
+YPR200C_mRNA     20.990521       -0.274363  ...  5.295252e-01  7.454705e-01
+YPR201W_mRNA     24.513683        2.892185  ...  9.567238e-08  4.336625e-06
+Q0055_mRNA        6.400799        0.331771  ...  5.956908e-01  7.895179e-01
+
+[2765 rows x 6 columns]
+None

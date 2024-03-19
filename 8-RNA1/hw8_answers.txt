@@ -1,0 +1,37 @@
+Q1:
+I examined the FastQC results and saw that the only problematic tab was
+"per base sequence content" which showed that the start and end of all reads are problematic
+(don't have a more or less const base distribution). 
+That's why I trimmed the start and end of all reads with:
+trimmomatic SE S288C_RNA-seq_rep1_subsample.fq.gz trimmomatic_results.fq HEADCROP:5 CROP:35
+
+I didn't filter out any reads (just trimmed the redas) so 0% of the data was filtered.
+
+To create the indexed genome:
+STAR --runMode genomeGenerate --genomeFastaFiles S288C_reference_sequence_R64-2-1_20150113.fasta --sjdbGTFfile S288C_reference_annotation_proc.gff --genomeDir S288C_reference_sequence_R64-2-1_20150113.STAR/ --genomeSAindexNbases 10
+
+Q2: the maximal intron length is 2482bp
+
+To map the clean reads to the reference genome:
+STAR --runMode alignReads --genomeDir S288C_reference_sequence_R64-2-1_20150113.STAR/ --readFilesIn trimmomatic_results.fq --outSAMtype BAM SortedByCoordinate --outFileNamePrefix alignedRNAReads --alignIntronMax 2978
+
+Q3:
+gene YDL083c - according to the annotation there are 2 exons and 1 intron between them.
+There are a few reads mapped to the intronic region.
+The splice junctions were detected correctly - ChrIV:307333-307765
+
+gene YEL003W - according to the GFF annotation there are 2 exons and 1 intron between them.
+Again there are a few reads mapped to the intronic region.
+Here the splice junctions weren't detected.
+
+Q4:
+I ran qualimap with:
+qualimap rnaseq -bam STAR_aligned_output/alignredRNAReadsAligned.sortedByCoord.out.bam -gtf S288C_reference_annotation_proc.gtf -outdir qualimap_output
+The Strand specificity estimation is 0.94 (fwd) / 0.06 (rev), 
+so I assume it is a forward-specific RNA-seq library, and that the reads that were mapped to the reverse strand are artifacts.
+
+Q5:
+Now I ran qualimap with:
+qualimap rnaseq -bam STAR_aligned_output/alignredRNAReadsAligned.sortedByCoord.out.bam -gtf S288C_reference_annotation_proc.gtf -outdir qualimap_strand_specific_output -p strand-specific-forward
+the percentage of reads mapped to the genome: "Number of mapped reads" / "Total number of alignments" = 937,048 / 1,620,963 = 57.8%
+the percentage of reads mapped to the genes: "Aligned to genes" / "Total number of alignments" = 273,389 / 1,620,963 = 16.9%

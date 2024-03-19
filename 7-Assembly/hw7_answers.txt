@@ -1,0 +1,31 @@
+I ran quast with:
+quast all_assemblies/RM11_assembly_4_contigs.fasta all_assemblies/RM11_assembly_4_scaffolds.fasta -o quast_assembly_4/ -m 1 -t 1
+
+Q1:
+Assembly size:      contigs - 11719325bp, scaffolds - 11721824bp
+N50:                 contigs - 107630bp,   scaffolds - 116437bp
+N90:                 contigs - 31164bp,    scaffolds - 34672bp
+%gaps ('N' bases):   contigs - 0%,         scaffolds - 2910 / 11721824 = 0.025%
+
+Now I ran quast again:
+quast all_assemblies/RM11_assembly_4_contigs.fasta all_assemblies/RM11_assembly_4_scaffolds.fasta -o quast_assembly_4_extended/ -m 1 -t 1 --bam reads_vs_assembly_4_contigs.sort.bam,reads_vs_assembly_4_scaffolds.sort.bam -r /groups/pupko/yairshimony/CompLabNGS/6-VariantCalling/data/S288C_reference_sequence_R64-2-1_20150113.fasta
+
+Q2:
+61 misassemblies were detected in the scaffolds.
+Percentage of the assembly that is affected by misassemblies is: "Misassembled contigs length" / "Total aligned length" = 4837392/11411745 = 42%
+
+Q3: ?
+
+Q4: there are 1711 BUSCOs in the test set ("Total BUSCO groups searched").
+The percentage of complete BUSCOs detected is "Complete BUSCOs" / "Total BUSCO groups searched" = 1684 / 1711 = 98.4%
+
+Q5: The N50 stat (contiguity) is more affected by the sequencing depth (which makes sense since when there are more reads -> the contigs will be longer -> N50 will be higher).
+The stats aren't linearly dependent on the depth - they are saturated.
+If we increase the depth to 400 then the assembly size will remain the same and N50 will be a bit higher.
+
+Q6:
+paired-end (assembly 3) vs single-end (assembly 7): 
+In single-end the number of contigs is higher and N50 is lower (which is bad).
+insert size 200 (assembly 3) vs insert size 2000 (assembly 6):
+When insert size is higher, the number of contigs is lower and N50 is higher (which is good) but #N's is much higher (which is bad).
+I would say the best layout is 3 (PE, IS 200)

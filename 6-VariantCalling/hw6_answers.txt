@@ -1,0 +1,30 @@
+Q1: Examples for positions that containt a variant: ChrII: 407,830, ChrII: 405,275, ChrII: 405,122.
+They are all variants of type SNPs (homozygous) because the base is identical in all reads and is different from the one in the reference genome.
+
+Q2: 4254 variants were detected (bcftools view -H rm11_reads_vs_ref.vcf | wc -l)
+
+Q3: Yes, the variants I located are also recognized by the VCF file.
+
+Q4: I filtered the VCF file with: "bcftools view -i "QUAL>30 & DP>10" rm11_reads_vs_ref.vcf > rm11_reads_vs_ref.HQ.vcf"
+Now there are 4047 variants (bcftools view -H rm11_reads_vs_ref.HQ.vcf | wc -l).
+The size of ChrII is 813,184bp, so the average variant frequency is 4047/813,184 = 0.005 variants/bp.
+From the VCF track in IGV it looks like the variants are indeed distributed more or less equally along the chromosome.
+
+Q5: 101 SVs were found in total (bcftools view -H diploidSV.vcf.gz | wc -l).
+6 were found on chromosome 2 (bcftools view -H diploidSV.vcf.gz ChrII | wc -l)
+In total there were 88 deletions (bcftools view -H -i "SVTYPE='DEL'" diploidSV.vcf.gz | wc -l), 
+and on chromosome 2 there were 5 deletions (bcftools view -H -i "SVTYPE='DEL'" diploidSV.vcf.gz ChrII | wc -l)
+
+Q6: there is a structual variant in ChrII:259,571-265,493 of type deletion.
+The read mapping support this SV since in the same regions there are no reads data at all.
+
+ Q7: before filtration, I got 4219 variants on chromosome 2 using gatk.
+ After filtration (bcftools view -i "QUAL>30 & INFO/DP>10" gatk_haplotypeCaller.vcf >
+ gatk_haplotypeCaller.HQ.vcf) I got 4097 variants.
+
+ Q8: Yes, when I load the results of gatk and bcftools into IGV - I see they are similar
+ (we can also see numerically that there is a similar amount of variants - 
+ both before filtration, and after filtration).
+ I found a few cases of variants detected by gatk and not by bcftools so I'll say
+ gatk is more accurate. 
+ For example, in ChrII:392,511 - gatk correctly identified an insertion that bcftoold didn't.

@@ -1,0 +1,40 @@
+* Create a BWA index for the reference: 
+bwa index S288C_reference_sequence_R64-2-1_20150113.fsa
+
+* Map the cleaned RM11 reads (after trimmomatic and fastuniq from EX 3) to the S288C reference: 
+bwa mem -t 8 S288C_reference_sequence_R64-2-1_20150113.fsa output_r1 output_r2 > rm11_reads.sam
+
+Q1: First I ran "samtools view rm11_reads.sam | wc" to get the number of records (=reads): 3191266.
+Then I ran "samtools view -f 2 rm11_reads.sam | wc" to filter the sam file 
+for records that have their second bit enabled. The line count 
+(which is the number of reads that were mapped in proper pair) is 3124581.
+Hence, the fraction is: 3124581 / 3191266 = 0.9791
+
+Q2: I ran "samtools view -f 2 -q 30 rm11_reads.sam | wc" to get the number of records and got 2764296.
+Hence, the fraction is 2764296 / 3191266 = 0.8662
+
+* Create a BAM file containing only reads which pass the filtration criteria:
+samtools view -bh -f 2 -q 30 rm11_reads.sam > rm11_reads_filtered.bam
+
+* Sort BAM file:
+samtools sort rm11_reads_filtered.bam > rm11_reads_filtered_sorted.bam
+
+* Create a BAM index:
+samtools index rm11_reads_filtered_sorted.bam
+
+* Calculate statistics:
+samtools stats rm11_reads_filtered_sorted.bam > rm11_reads_filtered_sorted.stats
+
+Q3: 0 pairs are mapped on different chromosomes.
+I created a BAM file containing all reads with "samtools view -bh rm11_reads.sam > rm11_reads_all.bam",
+and sorted, indexed the sorted file and calculated statistics.
+Now 5224 read pairs were mapped on different chromosomes.
+
+Q4: I examined different locations across the coverage track and I estimate the depth to be around 25 on average.
+
+Q5: paired-reads colored in red mean that the insert size is too big, 
+and paired-reads colored in blue mean that the insert size is too small 
+(many times to the level that the reads are overlapping)
+
+Q6: reads with suspected sequencing errors are probably those that that have variance in comparison to other reads.
+Real SNPs are those that all the reads have the same base and it's different from the reference genome.

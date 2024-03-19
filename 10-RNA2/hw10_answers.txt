@@ -1,0 +1,37 @@
+Preparing count matrix:
+
+I ran the command:
+featureCounts -a S288C_reference_annotation_proc.gtf -o counts.tsv -s 2 -t exon -g transcript_id *.bam
+
+Q1: the "-s 2" flag means we perform strand-specific counting - we count only reads on the reveresed strand.
+Q2: "-t exon" means the features we are interesed in are exons from the  GTF annotation file. The reads that are counted are the ones which are mapped to exons.
+"-g transcript_id" means we want to use the "transcript_id" attribute to identify the rows in the output matrix.
+
+Q3: there are 6697 transcripts in the counts.tsv output.
+
+Differential gene expression analysis:
+
+Q4: After filtering, I was left with 2765 transcripts.
+
+Q5: the samples clustered together exactly the way we wished - all 3 samples from the same strain are almost identical (for both strains).
+We don't see a batch effect.
+
+Q6:
+Geneid - the ID of each transcript from the GTF annotation file
+baseMean - ?
+log2FoldChange - log2(mean of S288C counts / mean of RM11 counts)
+lfcSE - ?
+stat - the Wals statistics
+pvalue - the pvalue indicating the significance of the difference between the strains
+padj - the adjusted pvalue after FDR correction
+
+Q7: there are 225 genes that have Log2FoldChange > 1 and adjusted p-value < 0.05
+
+Q9: Using the cutoffs specified, there are 252 DE genes.
+
+Q10: There are 108 genes that were expressed higher in RM11
+
+Q11: There are 144 genes that were expressed higher in S288C
+
+Q12: Increasing padj_cutoff will lead to more genes "passing" the significance threshold.
+Increasing lfc_cutoff will lead to less genes "passing" the FoldChange threshold.

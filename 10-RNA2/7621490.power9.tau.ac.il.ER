@@ -1,0 +1,142 @@
++ '[' -z '' ']'
++ case "$-" in
++ __lmod_vx=x
++ '[' -n x ']'
++ set +x
+Shell debugging restarted
++ unset __lmod_vx
++ hostname
++ echo 7621490.power9.tau.ac.il
++ source /groups/pupko/yairshimony/miniconda3/etc/profile.d/conda.sh
+++ export CONDA_EXE=/groups/pupko/yairshimony/miniconda3/bin/conda
+++ CONDA_EXE=/groups/pupko/yairshimony/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/groups/pupko/yairshimony/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/groups/pupko/yairshimony/miniconda3/bin/python
+++ '[' -z '' ']'
+++ export CONDA_SHLVL=0
+++ CONDA_SHLVL=0
+++ '[' -n '' ']'
+++++ dirname /groups/pupko/yairshimony/miniconda3/bin/conda
++++ dirname /groups/pupko/yairshimony/miniconda3/bin
+++ PATH=/groups/pupko/yairshimony/miniconda3/condabin:/usr/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/usr/local.cc/bin:/mathematica/vers/11.2:/opt/pbs/bin:/powerapps/share/bin:/opt/puppetlabs/bin:/groups/pupko/yairshimony/.local/bin:/groups/pupko/yairshimony/bin
+++ export PATH
+++ '[' -z '' ']'
+++ PS1=
++ conda activate ngs
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate ngs
++ '[' -n '' ']'
++ local ask_conda
+++ PS1=
+++ __conda_exe shell.posix activate ngs
+++ /groups/pupko/yairshimony/miniconda3/bin/conda shell.posix activate ngs
++ ask_conda='PS1='\''(ngs) '\''
+export PATH='\''/groups/pupko/yairshimony/miniconda3/envs/ngs/bin:/groups/pupko/yairshimony/miniconda3/condabin:/usr/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/usr/local.cc/bin:/mathematica/vers/11.2:/opt/pbs/bin:/powerapps/share/bin:/opt/puppetlabs/bin:/groups/pupko/yairshimony/.local/bin:/groups/pupko/yairshimony/bin'\''
+export CONDA_PREFIX='\''/groups/pupko/yairshimony/miniconda3/envs/ngs'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''ngs'\''
+export CONDA_PROMPT_MODIFIER='\''(ngs) '\''
+export CONDA_EXE='\''/groups/pupko/yairshimony/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/groups/pupko/yairshimony/miniconda3/bin/python'\''
+. "/groups/pupko/yairshimony/miniconda3/envs/ngs/etc/conda/activate.d/activate-r-base.sh"
+. "/groups/pupko/yairshimony/miniconda3/envs/ngs/etc/conda/activate.d/augustus.sh"
+. "/groups/pupko/yairshimony/miniconda3/envs/ngs/etc/conda/activate.d/libglib_activate.sh"
+. "/groups/pupko/yairshimony/miniconda3/envs/ngs/etc/conda/activate.d/openjdk_activate.sh"'
++ eval 'PS1='\''(ngs) '\''
+export PATH='\''/groups/pupko/yairshimony/miniconda3/envs/ngs/bin:/groups/pupko/yairshimony/miniconda3/condabin:/usr/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/usr/local.cc/bin:/mathematica/vers/11.2:/opt/pbs/bin:/powerapps/share/bin:/opt/puppetlabs/bin:/groups/pupko/yairshimony/.local/bin:/groups/pupko/yairshimony/bin'\''
+export CONDA_PREFIX='\''/groups/pupko/yairshimony/miniconda3/envs/ngs'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''ngs'\''
+export CONDA_PROMPT_MODIFIER='\''(ngs) '\''
+export CONDA_EXE='\''/groups/pupko/yairshimony/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/groups/pupko/yairshimony/miniconda3/bin/python'\''
+. "/groups/pupko/yairshimony/miniconda3/envs/ngs/etc/conda/activate.d/activate-r-base.sh"
+. "/groups/pupko/yairshimony/miniconda3/envs/ngs/etc/conda/activate.d/augustus.sh"
+. "/groups/pupko/yairshimony/miniconda3/envs/ngs/etc/conda/activate.d/libglib_activate.sh"
+. "/groups/pupko/yairshimony/miniconda3/envs/ngs/etc/conda/activate.d/openjdk_activate.sh"'
+++ PS1='(ngs) '
+++ export PATH=/groups/pupko/yairshimony/miniconda3/envs/ngs/bin:/groups/pupko/yairshimony/miniconda3/condabin:/usr/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/usr/local.cc/bin:/mathematica/vers/11.2:/opt/pbs/bin:/powerapps/share/bin:/opt/puppetlabs/bin:/groups/pupko/yairshimony/.local/bin:/groups/pupko/yairshimony/bin
+++ PATH=/groups/pupko/yairshimony/miniconda3/envs/ngs/bin:/groups/pupko/yairshimony/miniconda3/condabin:/usr/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/usr/local.cc/bin:/mathematica/vers/11.2:/opt/pbs/bin:/powerapps/share/bin:/opt/puppetlabs/bin:/groups/pupko/yairshimony/.local/bin:/groups/pupko/yairshimony/bin
+++ export CONDA_PREFIX=/groups/pupko/yairshimony/miniconda3/envs/ngs
+++ CONDA_PREFIX=/groups/pupko/yairshimony/miniconda3/envs/ngs
+++ export CONDA_SHLVL=1
+++ CONDA_SHLVL=1
+++ export CONDA_DEFAULT_ENV=ngs
+++ CONDA_DEFAULT_ENV=ngs
+++ export 'CONDA_PROMPT_MODIFIER=(ngs) '
+++ CONDA_PROMPT_MODIFIER='(ngs) '
+++ export CONDA_EXE=/groups/pupko/yairshimony/miniconda3/bin/conda
+++ CONDA_EXE=/groups/pupko/yairshimony/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/groups/pupko/yairshimony/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/groups/pupko/yairshimony/miniconda3/bin/python
+++ . /groups/pupko/yairshimony/miniconda3/envs/ngs/etc/conda/activate.d/activate-r-base.sh
++++ R CMD javareconf
++++ [[ ! -z '' ]]
++++ export RSTUDIO_WHICH_R=/groups/pupko/yairshimony/miniconda3/envs/ngs/bin/R
++++ RSTUDIO_WHICH_R=/groups/pupko/yairshimony/miniconda3/envs/ngs/bin/R
+++ . /groups/pupko/yairshimony/miniconda3/envs/ngs/etc/conda/activate.d/augustus.sh
++++ export AUGUSTUS_CONFIG_PATH=/groups/pupko/yairshimony/miniconda3/envs/ngs/config/
++++ AUGUSTUS_CONFIG_PATH=/groups/pupko/yairshimony/miniconda3/envs/ngs/config/
++++ export AUGUSTUS_SCRIPTS_PATH=/groups/pupko/yairshimony/miniconda3/envs/ngs/bin/
++++ AUGUSTUS_SCRIPTS_PATH=/groups/pupko/yairshimony/miniconda3/envs/ngs/bin/
++++ export AUGUSTUS_BIN_PATH=/groups/pupko/yairshimony/miniconda3/envs/ngs/bin/
++++ AUGUSTUS_BIN_PATH=/groups/pupko/yairshimony/miniconda3/envs/ngs/bin/
+++ . /groups/pupko/yairshimony/miniconda3/envs/ngs/etc/conda/activate.d/libglib_activate.sh
++++ export GSETTINGS_SCHEMA_DIR_CONDA_BACKUP=
++++ GSETTINGS_SCHEMA_DIR_CONDA_BACKUP=
++++ export GSETTINGS_SCHEMA_DIR=/groups/pupko/yairshimony/miniconda3/envs/ngs/share/glib-2.0/schemas
++++ GSETTINGS_SCHEMA_DIR=/groups/pupko/yairshimony/miniconda3/envs/ngs/share/glib-2.0/schemas
+++ . /groups/pupko/yairshimony/miniconda3/envs/ngs/etc/conda/activate.d/openjdk_activate.sh
++++ export JAVA_HOME_CONDA_BACKUP=
++++ JAVA_HOME_CONDA_BACKUP=
++++ export JAVA_HOME=/groups/pupko/yairshimony/miniconda3/envs/ngs/lib/jvm
++++ JAVA_HOME=/groups/pupko/yairshimony/miniconda3/envs/ngs/lib/jvm
++++ export JAVA_LD_LIBRARY_PATH_BACKUP=
++++ JAVA_LD_LIBRARY_PATH_BACKUP=
++++ export JAVA_LD_LIBRARY_PATH=/groups/pupko/yairshimony/miniconda3/envs/ngs/lib/jvm/lib/server
++++ JAVA_LD_LIBRARY_PATH=/groups/pupko/yairshimony/miniconda3/envs/ngs/lib/jvm/lib/server
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ export PATH=/groups/pupko/yairshimony/miniconda3/envs/ngs/bin:/groups/pupko/yairshimony/miniconda3/envs/ngs/bin:/groups/pupko/yairshimony/miniconda3/condabin:/usr/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/usr/local.cc/bin:/mathematica/vers/11.2:/opt/pbs/bin:/powerapps/share/bin:/opt/puppetlabs/bin:/groups/pupko/yairshimony/.local/bin:/groups/pupko/yairshimony/bin
++ PATH=/groups/pupko/yairshimony/miniconda3/envs/ngs/bin:/groups/pupko/yairshimony/miniconda3/envs/ngs/bin:/groups/pupko/yairshimony/miniconda3/condabin:/usr/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/usr/local.cc/bin:/mathematica/vers/11.2:/opt/pbs/bin:/powerapps/share/bin:/opt/puppetlabs/bin:/groups/pupko/yairshimony/.local/bin:/groups/pupko/yairshimony/bin
++ cd /groups/pupko/yairshimony/CompLabNGS/10-RNA2
++ python de_analysis.py
+Fitting size factors...
+... done in 0.00 seconds.
+
+Fitting dispersions...
+... done in 0.54 seconds.
+
+Fitting dispersion trend curve...
+/groups/pupko/yairshimony/miniconda3/envs/ngs/lib/python3.9/site-packages/pydeseq2/dds.py:440: UserWarning: The dispersion trend curve fitting did not converge. Switching to a mean-based dispersion trend.
+  self.fit_dispersion_trend()
+... done in 0.07 seconds.
+
+/groups/pupko/yairshimony/miniconda3/envs/ngs/lib/python3.9/site-packages/pydeseq2/dds.py:442: UserWarning: As the residual degrees of freedom is less than 3, the distribution of log dispersions is especially asymmetric and likely to be poorly estimated by the MAD.
+  self.fit_dispersion_prior()
+Fitting MAP dispersions...
+... done in 0.69 seconds.
+
+Fitting LFCs...
+... done in 0.45 seconds.
+
+Replacing 0 outlier genes.
+
+Running Wald tests...
+... done in 0.38 seconds.
+

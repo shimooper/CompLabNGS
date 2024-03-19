@@ -1,0 +1,36 @@
+Q1: In RM11_genes.fasta there are 5377 records (grep '>' RM11_genes.fasta | wc -l),
+and they represent the set of genes in the RM11 strain.
+In S288C_reference_sequence_R64-2-1_20150113.fsa there are 17 records, 
+and they represent the set of chromosomes (which compose the whole genome) of the S288C strain.
+
+Q2: I used blastn command. The gene was found, and there were 2 hits, in chromosomes ChrXII, ChrIV.
+The hit in chromosome ChrXII is better because it aligned a longer part of the query gene, there are less mismatches and less gaps
+(and we can also see that it leads to a higher bitscore).
+The genomic location of the better hit is in ChrXII, positions 515262-516410.
+This hit is relaible - the e-value is 0.
+
+Q3: 5363 of the RM11 genes were found in the S288C genome. To get this, I ran:
+cut -f 1 blast_result_all_RM11_genes | uniq | wc -l
+
+To get a list of all the RM11 genes that were not found in the S288C genome, 
+I ran blast with outfmt=7, and then on the output I ran: 
+grep -B 2 "# 0 hits found" blast_result_all_RM11_genes_with_comments
+The 14 genes that were not found are:
+ENA|EDV12486|EDV12486.1
+ENA|EDV10954|EDV10954.1
+ENA|EDV10956|EDV10956.1
+ENA|EDV12565|EDV12565.1
+ENA|EDV10957|EDV10957.1
+ENA|EDV12484|EDV12484.1
+ENA|EDV11338|EDV11338.1
+ENA|EDV10955|EDV10955.1
+ENA|EDV12485|EDV12485.1
+ENA|EDV12487|EDV12487.1
+ENA|EDV09647|EDV09647.1
+ENA|EDV08404|EDV08404.1
+ENA|EDV08447|EDV08447.1
+ENA|EDV10953|EDV10953.1
+
+Q4: There are 1329 genes of RM11 that had a perfect match (0 mismatches and 0 gaps). 
+To get this, I ran on the blast output (with outfmt=6):
+awk -F'\t' '$5 == 0 && $6 == 0' blast_result_all_RM11_genes | cut -f 1 | uniq | wc -l

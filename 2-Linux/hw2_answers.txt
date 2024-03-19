@@ -1,0 +1,13 @@
+Part 1 - Linux Basics
+
+Q1: 1.9M (megabyte)
+Q2: There are 29135 lines (wc -l e_coli_proteins.fasta), and 4391 proteins (grep '>' e_coli_proteins.fasta | wc -l)
+Q3: 11 (To create the file: grep 'DNA polymerase' e_coli_proteins.fasta > e_coli_dna_pol, then to count the number of headers: wc -l e_coli_dna_pol)
+
+
+Part 2 - Blast
+
+Q1: 4391 sequences were added to the blast db
+Q2: the new files are: e_coli_proteins.fasta.pin, e_coli_proteins.fasta.phr, e_coli_proteins.fasta.psq, e_coli_proteins.fasta.pdb, e_coli_proteins.fasta.pot, e_coli_proteins.fasta.pto, e_coli_proteins.fasta.ptf, e_coli_proteins.fasta.pjs (and makeblastdb.err, makeblastdb.out)
+Q3: the protein sp|A0A385XJL2|YGDT_ECOLI has 10 hits, of them only 1 is perfect match (which is the query protein itself)
+Q4: the name of the E.coli protein to which PQN05807 matched is sp|P32171|RHAB_ECOLI. The percent of sequence identity is 94.683%
